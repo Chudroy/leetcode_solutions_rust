@@ -13,7 +13,7 @@ fn main() {
 
     match args[1].as_str() {
         "longest_palindrome" => {
-            let s = String::from("babad");
+            let s = String::from("abababa");
             let result = Solution::longest_palindrome(s);
             println!("Longest palindrome is: {}", result);
         }
