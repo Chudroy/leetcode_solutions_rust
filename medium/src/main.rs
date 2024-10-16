@@ -1,7 +1,8 @@
 use crate::models::Solution;
 use std::env; // Import the Solution struct from the models module
-pub mod models;
-pub mod solutions;
+
+mod models;
+mod solutions;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -19,9 +20,9 @@ fn main() {
         },
         "add_two_numbers" =>{
             let l1 = Some(Box::new(models::ListNode {
-                val: 9,
+                val: 2,
                 next: Some(Box::new(models::ListNode {
-                    val: 9,
+                    val: 4,
                     next: Some(Box::new(models::ListNode {
                         val: 9,
                         next: None,
