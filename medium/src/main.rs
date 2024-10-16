@@ -16,6 +16,30 @@ fn main() {
             let s = String::from("abababa");
             let result = Solution::longest_palindrome(s);
             println!("Longest palindrome is: {}", result);
+        },
+        "add_two_numbers" =>{
+            let l1 = Some(Box::new(models::ListNode {
+                val: 9,
+                next: Some(Box::new(models::ListNode {
+                    val: 9,
+                    next: Some(Box::new(models::ListNode {
+                        val: 9,
+                        next: None,
+                    })),
+                })),
+            }));
+            let l2 = Some(Box::new(models::ListNode {
+                val: 5,
+                next: Some(Box::new(models::ListNode {
+                    val: 6,
+                    next: Some(Box::new(models::ListNode {
+                        val: 4,
+                        next: None,
+                    })),
+                })),
+            }));
+            let result = Solution::add_two_numbers(l1, l2);
+            println!("Sum of the two numbers is: {:?}", result);
         }
         _ => eprintln!("Solution not found."),
     }
