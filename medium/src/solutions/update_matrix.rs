@@ -1,6 +1,11 @@
 use crate::models::Solution;
 use std::collections::VecDeque;
 
+
+/**
+ * Given an m x n binary matrix mat, return the distance of the 
+ * nearest 0 for each cell. The distance between two adjacent cells is 1.
+ */
 impl Solution {
     pub fn update_matrix_dp(mut mat: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
         use std::cmp::min;

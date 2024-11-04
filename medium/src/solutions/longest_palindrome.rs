@@ -1,5 +1,9 @@
 use crate::models::Solution;
 
+
+/**
+ * Given a string s, return the longest palindromic substring in s.
+ */
 impl Solution {
     pub fn longest_palindrome(s: String) -> String {
         let len = s.len();
