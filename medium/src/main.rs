@@ -1,5 +1,6 @@
 use crate::models::Solution;
-use std::env; // Import the Solution struct from the models module
+use std::env;
+use utils::models::ListNode; // Import the Solution struct from the models module
 
 mod models;
 mod solutions;
@@ -19,18 +20,18 @@ fn main() {
             println!("Longest palindrome is: {}", result);
         }
         "add_two_numbers" => {
-            let l1 = Some(Box::new(models::ListNode {
+            let l1 = Some(Box::new(ListNode {
                 val: 2,
-                next: Some(Box::new(models::ListNode {
+                next: Some(Box::new(ListNode {
                     val: 4,
-                    next: Some(Box::new(models::ListNode { val: 9, next: None })),
+                    next: Some(Box::new(ListNode { val: 9, next: None })),
                 })),
             }));
-            let l2 = Some(Box::new(models::ListNode {
+            let l2 = Some(Box::new(ListNode {
                 val: 5,
-                next: Some(Box::new(models::ListNode {
+                next: Some(Box::new(ListNode {
                     val: 6,
-                    next: Some(Box::new(models::ListNode { val: 4, next: None })),
+                    next: Some(Box::new(ListNode { val: 4, next: None })),
                 })),
             }));
             let result = Solution::add_two_numbers(l1, l2);

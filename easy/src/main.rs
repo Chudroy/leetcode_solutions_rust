@@ -1,11 +1,13 @@
 mod models;
 mod solutions;
 
-use crate::models::ListNode;
-use crate::models::Solution;
+use models::Solution;
+use utils::binary_tree;
+use utils::models::{ListNode, TreeNode};
 
-use std::env; // Import the Solution struct from the models module
-
+use std::cell::RefCell;
+use std::env;
+use std::rc::Rc;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -61,12 +63,35 @@ fn main() {
 
             let merged_list = list_to_vec(result);
             println!("Merged list: {:?}", merged_list);
-        },
+        }
         "max_profit" => {
             let prices = vec![7, 1, 5, 3, 6, 4];
             let result = Solution::max_profit(prices);
             println!("Max profit: {}", result);
-        },
+        }
+        "invert_tree" => {
+            // Create a sample binary tree
+            let tree = Some(Rc::new(RefCell::new(TreeNode {
+                val: 4,
+                left: Some(Rc::new(RefCell::new(TreeNode {
+                    val: 2,
+                    left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+                    right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
+                }))),
+                right: Some(Rc::new(RefCell::new(TreeNode {
+                    val: 7,
+                    left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
+                    right: Some(Rc::new(RefCell::new(TreeNode::new(9)))),
+                }))),
+            })));
+
+            binary_tree::print_tree::print_tree_pretty(tree.clone(), String::new(), false);
+
+            let result = Solution::invert_tree(tree);
+
+            println!("\nInverted tree (Pretty):");
+            binary_tree::print_tree::print_tree_pretty(result, String::new(), false);
+        }
         _ => eprintln!("Solution not found."),
     }
 }

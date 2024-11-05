@@ -1,5 +1,5 @@
 // Definition for singly-linked list.
-use crate::models::ListNode;
+use utils::models::ListNode;
 use crate::models::Solution;
 
 /**

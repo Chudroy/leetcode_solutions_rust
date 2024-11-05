@@ -1,6 +1,5 @@
 use crate::models::Solution;
 
-
 /**
  * 26. Remove Duplicates from Sorted Array
  * Given an integer array nums sorted in non-decreasing order,
